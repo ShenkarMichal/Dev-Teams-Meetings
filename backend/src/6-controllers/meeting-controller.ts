@@ -9,4 +9,11 @@ router.get("/dev-teams", async (request: Request, response: Response, next: Next
     response.json(devTeams)
 })
 
+//Get meetings by dev-Team
+router.get("/meetings/:devTeamID", async (request: Request, response: Response, next: NextFunction)=>{
+    const devTeamID = +request.params.devTeamID
+    const meetings = await meetingLogic.getMeetingByDevTeam(devTeamID)
+    response.json(meetings)
+})
+
 export default router
