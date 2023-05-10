@@ -17,6 +17,12 @@ router.get("/meetings/:devTeamID", async (request: Request, response: Response, 
     response.json(meetings)
 })
 
+//Get all meetings
+router.get("/meetings", async (request: Request, response: Response, next: NextFunction)=>{
+    const meetings = await meetingLogic.getAllMeetings()
+    response.json(meetings)
+})
+
 //Add meeting
 router.post("/meetings", async (request: Request, response: Response, next: NextFunction)=>{
     const meeting = new MeetingModel(request.body)

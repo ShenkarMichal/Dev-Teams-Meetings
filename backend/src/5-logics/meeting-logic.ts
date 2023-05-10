@@ -9,6 +9,14 @@ async function getAllDevTeams(): Promise<DevTeamsModel[]> {
     return devTeams    
 }
 
+async function getAllMeetings(): Promise<MeetingModel[]> {
+    const sql = `SELECT M.*, D.devTeamName 
+                FROM meetings AS M JOIN devteams AS D
+                ON M.devTeamID = D.devTeamID`
+    const meetings = await dal.execute(sql)
+    return meetings    
+}
+
 async function getMeetingByDevTeam(devTeamID:number): Promise<MeetingModel[]> {
     const sql = `SELECT M.*, D.devTeamName 
                 FROM meetings AS M JOIN devteams AS D
@@ -28,6 +36,7 @@ async function addMeeting(meeting:MeetingModel): Promise<MeetingModel> {
 
 export default {
     getAllDevTeams,
+    getAllMeetings,
     getMeetingByDevTeam,
     addMeeting
 }
