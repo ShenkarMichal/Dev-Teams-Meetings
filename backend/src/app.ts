@@ -10,7 +10,7 @@ import expressRateLimit from 'express-rate-limit'
 const server = express()
 
 server.use("/api/", expressRateLimit({
-    max: 1,
+    max: 3,
     windowMs: 1000
 }))
 

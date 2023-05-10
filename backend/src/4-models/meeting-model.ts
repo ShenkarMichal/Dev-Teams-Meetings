@@ -1,8 +1,8 @@
 class MeetingModel {
     public meetID: number
     public devTeamID: number
-    public startDate: Date
-    public endDate: Date
+    public startDate: string
+    public endDate: string
     public meetDescription: string
     public meetRoom: string
 
