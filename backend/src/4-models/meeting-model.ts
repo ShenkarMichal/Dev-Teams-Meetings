@@ -6,13 +6,13 @@ class MeetingModel {
     public meetDescription: string
     public meetRoom: string
 
-    public constructor(meet: MeetingModel) {
-        this.meetID = meet.meetID
-        this.devTeamID = meet.devTeamID
-        this.startDate = meet.startDate
-        this.endDate = meet.endDate
-        this.meetDescription = meet.meetDescription
-        this.meetRoom = meet.meetRoom
+    public constructor(meeting: MeetingModel) {
+        this.meetID = meeting.meetID
+        this.devTeamID = meeting.devTeamID
+        this.startDate = meeting.startDate
+        this.endDate = meeting.endDate
+        this.meetDescription = meeting.meetDescription
+        this.meetRoom = meeting.meetRoom
     }
 
 }
